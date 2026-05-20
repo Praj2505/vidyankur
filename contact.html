@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Vidyankur</title>
+  <meta name="description" content="Get in touch with Vidyankur. For parents, schools, tuition centers, and bookstores.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo-mark">
+          <a href="index.html" class="nav-logo">
+            <img src="assets/icon.png" alt="Vidyankur Icon" class="nav-logo-icon">
+            <img src="assets/text.png" alt="Vidyankur Text" class="nav-logo-text">
+        </span>
+        <span class="nav-logo-mark">            
+        </span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="activity-centers.html">For Activity Centers</a></li>
+        <li><a href="schools.html">For Schools</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a href="books.html" class="btn btn-primary">Shop Books</a></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container-narrow">
+      <span class="eyebrow">Contact</span>
+      <h1>Let's talk.</h1>
+      <p class="page-header-sub">
+        Whether you're a parent with a question, a school interested in adopting our program, a bookstore, or just curious — we'd love to hear from you.
+      </p>
+      <div class="ornament" aria-hidden="true">
+        <svg class="ornament-icon" viewBox="0 0 24 24"><path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7L3 9h7z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT GRID ========== -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <div class="contact-form-wrap reveal">
+          <h2>Send us a message.</h2>
+          <p class="contact-form-sub">We typically reply within one working day.</p>
+
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/xzdwdkaz" method="POST">
+            <!-- ⚠️ Replace YOUR_FORM_ID with your Formspree ID, or change action to your Google Form / other endpoint -->
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-field">
+                <label for="role">I am a</label>
+                <select id="role" name="role" required>
+                  <option value="">— Select —</option>
+                  <option value="parent">Parent</option>
+                  <option value="school">School</option>
+                  <option value="tuition">Tuition Center</option>
+                  <option value="bookstore">Bookstore</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone <span class="form-optional">(optional)</span></label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="org">Organization Name <span class="form-optional">(if school / bookstore)</span></label>
+              <input type="text" id="org" name="organization">
+            </div>
+
+            <div class="form-field">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+
+            <p class="form-note">
+              By submitting, you agree to be contacted by Vidyankur regarding your inquiry. We will never share your details.
+            </p>
+          </form>
+        </div>
+
+        <!-- Direct contact -->
+        <aside class="contact-info reveal">
+          <h2>Or reach out directly.</h2>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <span class="contact-method-label">WhatsApp / Call</span>
+              <a href="tel:+919876263243" class="contact-method-value">+91 98762 63243</a>
+              <a href="https://wa.me/919876263243" class="contact-method-link">Open WhatsApp →</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="contact-method-label">Email</span>
+              <a href="mailto:vidyankurpublication@gmail.com" class="contact-method-value">vidyankurpublication@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <span class="contact-method-label">Instagram</span>
+              <a href="https://instagram.com/_vidyankur" target="_blank" rel="noopener" class="contact-method-value">@_vidyankur</a>
+              <span class="contact-method-link">Follow our journey</span>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <span class="contact-method-label">Based In</span>
+              <span class="contact-method-value">Zirakpur, Punjab</span>
+              <span class="contact-method-link">India</span>
+            </div>
+          </div>
+
+          <div class="contact-hours">
+            <h4>Best time to reach us</h4>
+            <p>Monday – Saturday<br>10:00 AM — 6:00 PM IST</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section-ivory">
+    <div class="container-narrow">
+      <div class="section-header reveal">
+        <span class="eyebrow">Quick Answers</span>
+        <h2>Frequently asked.</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Where can I buy Vidyankur books?</summary>
+          <p>All our books are available on Amazon India. We're also working on direct shipping — drop us a message if you'd like to be notified.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can my school adopt Vidyankur?</summary>
+          <p>Yes. We plan to work with primary schools (Classes 1–3 primarily) to include our annual workbook in their book list. The Program is Launching soon. <a href="schools.html">Learn about the School Program →</a></p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you ship outside India?</summary>
+          <p>Currently we ship within India only. For international orders, please email us — we may be able to arrange something special.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are bulk discounts available?</summary>
+          <p>Yes. We offer significant discounts for schools, tuition centers, and bulk orders above 30 copies. <a href="schools.html#pricing">See pricing →</a></p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I request a sample copy?</summary>
+          <p>Schools and institutional buyers can request a free sample. Individual parents can preview books on Amazon or through our "Peek Inside" feature on the <a href="books.html">Books page</a>.</p>
+        </details>
+        <details class="faq-item">
+          <summary>I want to partner / collaborate. Who do I contact?</summary>
+          <p>For partnerships, distribution, illustration collaborations, or media inquiries — please email <a href="mailto:vidyankurpublication@gmail.com">vidyankurpublication@gmail.com</a> with the subject line "Partnership".</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="nav-logo-mark">
+          <a href="index.html" class="nav-logo">
+            <img src="assets/icon.png" alt="Vidyankur Icon" class="nav-logo-icon">
+            <img src="assets/text.png" alt="Vidyankur Text" class="nav-logo-text">
+        </span>
+          </div>
+          <p>Nurturing young minds with Indian stories. Heritage activity books for children aged 3 and up.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="activity-centres.html">For Activity Centres</a></li>
+            <li><a href="schools.html">For Schools</a></li>
+            <li><a href="competitions.html">Competitions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919876263243">+91 98762 63243</a></li>
+            <li><a href="mailto:vidyankurpublication@gmail.com">vidyankur&shy;publication@gmail.com</a></li>
+            <li>Zirakpur, Punjab</li>
+            <li>India</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="https://instagram.com/_vidyankur" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Amazon Store</a></li>
+            <li><a href="contact.html">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VIDYANKUR™. All rights reserved.</span>
+        <span>Made with ❤ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

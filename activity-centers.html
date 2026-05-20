@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Activity Centres — Vidyankur</title>
+  <meta name="description" content="Add Indian heritage to your activity sessions. Vidyankur's coloring and rhyming books are designed for after-school programs, tuition centres, and hobby classes.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <style>
+    /* ===== Activity Centres — page-specific ===== */
+
+    /* Hero */
+    .ac-hero {
+      padding: 100px 0 80px;
+      position: relative;
+    }
+    .ac-hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .ac-hero-content .eyebrow { margin-bottom: 16px; }
+    .ac-hero h1 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 500;
+      line-height: 1.08;
+      color: var(--olive);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .ac-hero h1 em {
+      font-style: italic;
+      color: var(--gold-dark);
+      font-weight: 400;
+    }
+    .ac-hero-sub {
+      font-size: 18px;
+      color: var(--ink-soft);
+      margin-bottom: 32px;
+      max-width: 540px;
+      line-height: 1.65;
+    }
+    .ac-hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Visual: stacked books mockup */
+    .ac-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ac-books-stack {
+      position: relative;
+      width: 280px;
+      height: 380px;
+    }
+    .ac-book-card {
+      position: absolute;
+      width: 220px;
+      border-radius: 12px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: var(--cream);
+      box-shadow: 0 12px 40px rgba(61, 43, 31, 0.2);
+      transition: transform 0.4s var(--ease);
+    }
+    .ac-book-card:hover { transform: translateY(-6px) rotate(0deg) !important; }
+    .ac-book-1 {
+      top: 0; left: 0;
+      height: 300px;
+      background: linear-gradient(135deg, #5C6B4A, #3D4730);
+      transform: rotate(-4deg);
+      z-index: 2;
+    }
+    .ac-book-2 {
+      top: 40px; left: 50px;
+      height: 300px;
+      background: linear-gradient(135deg, #8B3A2C, #5C2419);
+      transform: rotate(3deg);
+      z-index: 1;
+    }
+    .ac-book-card::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(245, 240, 227, 0.3);
+      border-radius: 6px;
+      pointer-events: none;
+    }
+    .ac-book-vol {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+    .ac-book-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .ac-book-price {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* How it fits */
+    .fit-section { padding: 80px 0; }
+    .fit-intro {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .fit-intro h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 12px 0 16px;
+    }
+    .fit-intro > p {
+      font-size: 17px;
+      color: var(--ink-soft);
+      margin-bottom: 48px;
+    }
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .fit-card {
+      background: var(--ivory);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: 14px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: all 0.3s var(--ease);
+    }
+    .fit-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+    .fit-emoji {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .fit-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--olive);
+    }
+    .fit-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* Session plan */
+    .session-section { padding: 80px 0; }
+    .session-block {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .session-block h2 {
+      font-size: clamp(28px, 3.5vw, 38px);
+      margin: 12px 0 16px;
+    }
+    .session-block > p {
+      font-size: 17px;
+      color: var(--ink-soft);
+      margin-bottom: 40px;
+    }
+    .session-plan {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--gold-soft);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .session-step {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      padding: 24px 28px;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      align-items: center;
+      background: var(--ivory);
+      transition: background 0.3s;
+    }
+    .session-step:hover { background: var(--cream); }
+    .session-step:last-child { border-bottom: none; }
+    .session-time {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gold-dark);
+      text-align: center;
+      padding: 8px 12px;
+      background: rgba(201, 168, 76, 0.1);
+      border-radius: 8px;
+      white-space: nowrap;
+    }
+    .session-step h3 {
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--olive);
+    }
+    .session-step p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .session-total {
+      text-align: center;
+      padding: 16px;
+      background: var(--olive);
+      color: var(--cream);
+      font-family: var(--font-display);
+      font-size: 15px;
+      letter-spacing: 0.05em;
+    }
+
+    /* Why it works for parents */
+    .parents-section { padding: 80px 0; }
+    .parents-grid {
+      max-width: 900px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .parents-card {
+      background: var(--cream);
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: all 0.3s var(--ease);
+    }
+    .parents-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+    .parents-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--ivory);
+      border: 1.5px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--sage);
+    }
+    .parents-icon svg { width: 22px; height: 22px; }
+    .parents-card h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      color: var(--olive);
+    }
+    .parents-card p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Pricing */
+    .ac-pricing { padding: 80px 0; }
+    .ac-pricing-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--ivory);
+      border: 1.5px solid var(--gold);
+      border-radius: 18px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .ac-pricing-header {
+      background: var(--olive);
+      color: var(--cream);
+      padding: 32px 28px;
+    }
+    .ac-pricing-header h3 {
+      color: var(--cream);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .ac-pricing-header p {
+      color: var(--gold-soft);
+      font-size: 14px;
+      margin: 0;
+    }
+    .ac-pricing-body {
+      padding: 40px 36px;
+    }
+    .ac-pricing-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+    .ac-pricing-row:last-child { border-bottom: none; }
+    .ac-pricing-item { text-align: left; }
+    .ac-pricing-item strong {
+      display: block;
+      font-size: 16px;
+      color: var(--olive);
+    }
+    .ac-pricing-item span {
+      font-size: 13px;
+      color: var(--ink-soft);
+    }
+    .ac-pricing-value {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--gold-dark);
+    }
+    .ac-pricing-value small {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--ink-soft);
+    }
+    .ac-pricing-note {
+      margin-top: 24px;
+      padding: 16px;
+      background: rgba(201, 168, 76, 0.08);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+    .ac-pricing-note strong { color: var(--olive); }
+
+    /* CTA */
+    .ac-cta {
+      padding: 100px 0;
+      background: var(--olive);
+      color: var(--cream);
+    }
+    .ac-cta-inner {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .ac-cta .eyebrow { color: var(--gold-soft); }
+    .ac-cta h2 {
+      color: var(--cream);
+      font-size: clamp(28px, 4vw, 40px);
+      margin: 12px 0 16px;
+    }
+    .ac-cta p {
+      color: rgba(245, 240, 227, 0.85);
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+    .ac-cta-actions {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .ac-cta-note {
+      font-size: 14px;
+      color: rgba(245, 240, 227, 0.6);
+    }
+    .ac-cta-note a { color: var(--gold-soft); }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .ac-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .ac-books-stack { margin: 0 auto; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .parents-grid { grid-template-columns: 1fr; }
+      .session-step { grid-template-columns: 80px 1fr; gap: 16px; padding: 20px 20px; }
+    }
+    @media (max-width: 560px) {
+      .ac-books-stack { width: 220px; height: 320px; }
+      .ac-book-card { width: 180px; height: 250px !important; padding: 24px 18px; }
+      .ac-book-2 { left: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo-mark">
+          <a href="index.html" class="nav-logo">
+            <img src="assets/icon.png" alt="Vidyankur Icon" class="nav-logo-icon">
+            <img src="assets/text.png" alt="Vidyankur Text" class="nav-logo-text">
+        </span>
+        <span class="nav-logo-mark">            
+        </span>
+        </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="activity-centers.html" class="active">For Activity Centers</a></li>
+        <li><a href="schools.html">For Schools</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a href="#pricing" class="btn btn-primary">See Pricing</a></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="ac-hero">
+    <div class="container">
+      <div class="ac-hero-grid">
+        <div class="ac-hero-content">
+          <span class="eyebrow">For Activity Centres</span>
+          <h1>
+            Give your students<br>
+            <em>a heritage hour.</em>
+          </h1>
+          <p class="ac-hero-sub">
+            You already teach them art, dance, and music. Now give them the stories those arts were born from. Vidyankur's 32-page coloring and rhyming books turn any after-school session into a journey through Indian history — no extra training required.
+          </p>
+          <div class="ac-hero-ctas">
+            <a href="https://wa.me/919876263243?text=Hi%2C%20I%20run%20an%20activity%20centre%20and%20I%E2%80%99m%20interested%20in%20Vidyankur%20books." class="btn btn-primary">WhatsApp Us</a>
+            <a href="#how" class="btn btn-ghost btn-arrow">How It Works</a>
+          </div>
+        </div>
+        <div class="ac-visual">
+          <div class="ac-books-stack">
+            <div class="ac-book-card ac-book-1" style="background-image: url(assets/maharana-title.png);background-size: cover;background-position: top center;">
+            </div>
+            <div class="ac-book-card ac-book-2" style="background-image: url(assets/shivaji-title.png);background-size: cover;background-position: top center;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT FITS ========== -->
+  <section class="section-ivory fit-section" id="how">
+    <div class="container">
+      <div class="fit-intro reveal">
+        <span class="eyebrow">Why It Works</span>
+        <h2>Built for the way you already teach.</h2>
+        <p>You don't need a curriculum change. You need a single book that fills one activity slot per week — and keeps children asking for more.</p>
+      </div>
+
+      <div class="fit-grid reveal">
+        <div class="fit-card">
+          <span class="fit-emoji">🎨</span>
+          <h3>Art &amp; Craft Sessions</h3>
+          <p>Replace blank-sheet coloring with pages that mean something. Children color Shivaji's coronation, Chetak leaping across the river, a Maratha fort on a hilltop.</p>
+        </div>
+        <div class="fit-card">
+          <span class="fit-emoji">🎤</span>
+          <h3>Storytelling &amp; Recitation</h3>
+          <p>Every book has a four-stanza rhyme designed to be memorized in one sitting. Perfect for weekly recitation or show-and-tell with parents.</p>
+        </div>
+        <div class="fit-card">
+          <span class="fit-emoji">🧩</span>
+          <h3>Activity &amp; Puzzle Time</h3>
+          <p>Connect-the-dots, mazes, find-the-difference — built into every book. Children finish the session having learned something without realizing they studied.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SAMPLE SESSION PLAN ========== -->
+  <section class="session-section">
+    <div class="container">
+      <div class="session-block reveal">
+        <span class="eyebrow">Ready to Use</span>
+        <h2>A sample 30-minute session.</h2>
+        <p>Here's how one book can power a single class. No prep, no printouts, no extra material.</p>
+
+        <div class="session-plan">
+          <div class="session-step">
+            <span class="session-time">5 min</span>
+            <div>
+              <h3>The Story</h3>
+              <p>Read aloud the hero's story. One page, age-appropriate, written for young listeners.</p>
+            </div>
+          </div>
+          <div class="session-step">
+            <span class="session-time">5 min</span>
+            <div>
+              <h3>The Rhyme</h3>
+              <p>Read the four-stanza rhyme together. By the second week, children recite it from memory.</p>
+            </div>
+          </div>
+          <div class="session-step">
+            <span class="session-time">15 min</span>
+            <div>
+              <h3>Coloring Time</h3>
+              <p>Children color one of two full-page illustrations. They take the book home — parents see the output.</p>
+            </div>
+          </div>
+          <div class="session-step">
+            <span class="session-time">5 min</span>
+            <div>
+              <h3>Activity Page</h3>
+              <p>A quick maze, connect-the-dots, or spot-the-difference wraps up the session.</p>
+            </div>
+          </div>
+          <div class="session-total">
+            Total: 30 minutes · One book · Zero preparation
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY PARENTS LOVE IT ========== -->
+  <section class="section-ivory parents-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">The Parent Angle</span>
+        <h2>Parents notice this.</h2>
+        <p>This is the kind of thing that gets talked about in the pickup line.</p>
+      </div>
+
+      <div class="parents-grid reveal">
+        <div class="parents-card">
+          <div class="parents-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          </div>
+          <div>
+            <h3>A take-home artifact</h3>
+            <p>Children carry the book home. Parents see their colored pages, hear the rhyme at dinner — visible proof of what they're learning.</p>
+          </div>
+        </div>
+        <div class="parents-card">
+          <div class="parents-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 7v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V7l-8-5z"/></svg>
+          </div>
+          <div>
+            <h3>Indian values, not just fun</h3>
+            <p>Parents are looking for activities that are more than entertainment. Heritage content stands out in a world of generic crafts.</p>
+          </div>
+        </div>
+        <div class="parents-card">
+          <div class="parents-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <h3>Word-of-mouth marketing</h3>
+            <p>"They're teaching my child about Shivaji" is a sentence parents repeat — to neighbors, to other parents. It markets your centre for you.</p>
+          </div>
+        </div>
+        <div class="parents-card">
+          <div class="parents-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+          </div>
+          <div>
+            <h3>Differentiation</h3>
+            <p>Every centre does art and dance. Offering a "Heritage Hour" makes your centre memorable — and gives parents a reason to choose you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="ac-pricing" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple and transparent.</h2>
+      </div>
+
+      <div class="ac-pricing-card reveal">
+        <div class="ac-pricing-header">
+          <h3>Activity Centre Pricing</h3>
+          <p>Bulk rates for centres ordering 10+ copies</p>
+        </div>
+        <div class="ac-pricing-body">
+          <div class="ac-pricing-row">
+            <div class="ac-pricing-item">
+              <strong>Chhatrapati Shivaji Maharaj</strong>
+              <span>32 pages · Coloring + Rhyming + Activities</span>
+            </div>
+            <div class="ac-pricing-value">₹199 <small>MRP</small></div>
+          </div>
+          <div class="ac-pricing-row">
+            <div class="ac-pricing-item">
+              <strong>Maharana Pratap &amp; Chetak</strong>
+              <span>32 pages · Coloring + Rhyming + Activities</span>
+            </div>
+            <div class="ac-pricing-value">₹199 <small>MRP</small></div>
+          </div>
+          <div class="ac-pricing-row">
+            <div class="ac-pricing-item">
+              <strong>Bulk Order (10+ copies)</strong>
+              <span>Mix and match any titles</span>
+            </div>
+            <div class="ac-pricing-value">Ask Us</div>
+          </div>
+
+          <div class="ac-pricing-note">
+            <strong>How it works:</strong> You buy the books at a bulk rate and either include them in your activity kit fee or sell them to parents directly at MRP. Either way, the book goes home with the child — and your centre gets credited as the source.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="ac-cta">
+    <div class="container">
+      <div class="ac-cta-inner reveal">
+        <span class="eyebrow">Get Started</span>
+        <h2>Add heritage to your next batch.</h2>
+        <p>One WhatsApp message is all it takes. Tell us your centre name, city, and how many copies you need — we'll handle the rest.</p>
+        <div class="ac-cta-actions">
+          <a href="https://wa.me/919876263243?text=Hi%2C%20I%20run%20an%20activity%20centre%20and%20I%E2%80%99m%20interested%20in%20ordering%20Vidyankur%20books." class="btn btn-primary">WhatsApp Us</a>
+          <a href="contact.html" class="btn btn-secondary">Send an Email</a>
+        </div>
+        <p class="ac-cta-note">
+          Or call directly: <a href="tel:+919876263243">+91 98762 63243</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <svg class="nav-logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="50" cy="50" r="46" fill="none" stroke="#C9A84C" stroke-width="2"/>
+              <circle cx="50" cy="50" r="40" fill="#F5F0E3"/>
+              <path d="M 25 55 Q 35 50, 50 55 Q 65 50, 75 55 L 75 70 Q 65 65, 50 70 Q 35 65, 25 70 Z" fill="#8B9A6B" stroke="#5C6B4A" stroke-width="1.5" stroke-linejoin="round"/>
+              <line x1="50" y1="55" x2="50" y2="70" stroke="#5C6B4A" stroke-width="1.5"/>
+              <path d="M 50 55 Q 50 42, 50 30" stroke="#5C6B4A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M 50 38 Q 42 35, 40 28 Q 47 28, 50 35" fill="#8B9A6B"/>
+              <path d="M 50 42 Q 58 39, 60 32 Q 53 32, 50 39" fill="#8B9A6B"/>
+            </svg>
+            <span class="nav-logo-text">
+              <span class="nav-logo-name">VIDYANKUR</span>
+              <span class="nav-logo-tag">Seed of Knowledge</span>
+            </span>
+          </div>
+          <p>Nurturing young minds with Indian stories. Heritage activity books for children aged 3 and up.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="books.html">Books</a></li>
+             <li><a href="activity-centres.html">For Activity Centres</a></li>
+            <li><a href="schools.html">For Schools</a></li>
+            <li><a href="competitions.html">Competitions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919876263243">+91 98762 63243</a></li>
+            <li><a href="mailto:vidyankurpublication@gmail.com">vidyankur&shy;publication@gmail.com</a></li>
+            <li>Zirakpur, Punjab</li>
+            <li>India</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="https://instagram.com/_vidyankur" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Amazon Store</a></li>
+            <li><a href="contact.html">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VIDYANKUR™. All rights reserved.</span>
+        <span>Made with ❤ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

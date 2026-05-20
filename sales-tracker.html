@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales Tracker — Vidyankur (Internal)</title>
+  <meta name="description" content="Internal sales entry form for the Vidyankur team.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <style>
+    /* Page-only styling */
+    .tracker-wrap { padding: 60px 0 100px; }
+    .tracker-intro {
+      max-width: 720px;
+      margin: 0 auto 32px;
+      text-align: center;
+    }
+    .tracker-shell {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--ivory);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .tracker-shell iframe {
+      width: 100%;
+      min-height: 1400px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--cream);
+    }
+    .tracker-placeholder {
+      padding: 80px 24px;
+      text-align: center;
+      background: var(--cream);
+      border: 1.5px dashed var(--gold-soft);
+      border-radius: 10px;
+    }
+    .tracker-placeholder code {
+      display: inline-block;
+      background: var(--olive);
+      color: var(--cream);
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+      margin: 0 2px;
+    }
+    .tracker-note {
+      max-width: 720px;
+      margin: 32px auto 0;
+      padding: 24px 28px;
+      background: rgba(201, 168, 76, 0.08);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+    .tracker-note strong { color: var(--olive); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <span class="nav-logo-mark">
+          <a href="index.html" class="nav-logo">
+            <img src="assets/icon.png" alt="Vidyankur Icon" class="nav-logo-icon">
+            <img src="assets/text.png" alt="Vidyankur Text" class="nav-logo-text">
+        </span>
+        <span class="nav-logo-mark">            
+        </span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="activity-centers.html">For Activity Centers</a></li>
+        <li><a href="schools.html">For Schools</a></li>
+        <li><a href="competitions.html">Competitions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta"><a href="books.html" class="btn btn-primary">Shop Books</a></div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- ========== PAGE HEADER ========== -->
+  <section class="page-header">
+    <div class="container-narrow">
+      <span class="eyebrow">Internal · Sales Entry</span>
+      <h1>Sales Tracker</h1>
+      <p class="page-header-sub">
+        Log a new sale here. All entries are saved to the team's Google Sheet automatically.
+      </p>
+      <div class="ornament" aria-hidden="true">
+        <svg class="ornament-icon" viewBox="0 0 24 24"><path d="M12 2l2 7h7l-5.5 4 2 7-5.5-4-5.5 4 2-7L3 9h7z"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TRACKER FORM ========== -->
+  <section class="tracker-wrap">
+    <div class="container">
+
+      <div class="tracker-shell">
+        <!--
+          ⚠️ TO EMBED YOUR GOOGLE FORM:
+          1. Open your Google Form
+          2. Click "Send" → choose the <> (Embed HTML) tab
+          3. Copy the src URL (looks like https://docs.google.com/forms/d/e/.../viewform?embedded=true)
+          4. Paste it into the iframe src below
+          5. Delete the .tracker-placeholder div below
+        -->
+
+        <div class="tracker-placeholder">
+          <h3 style="margin-bottom: 16px;">Google Form goes here</h3>
+          <p style="margin-bottom: 20px;">Replace this block with your Google Form embed.</p>
+          <p style="font-size: 14px;">
+            In your form, click <code>Send</code> → <code>&lt;&gt;</code> embed tab, copy the URL, and paste into the iframe <code>src</code> attribute below.
+          </p>
+        </div>
+
+        <!-- Uncomment and update the URL when ready: -->
+        <!--
+        <iframe
+          src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+          title="Sales Tracker Form"
+          loading="lazy">
+          Loading…
+        </iframe>
+        -->
+
+      </div>
+
+      <div class="tracker-note">
+        <strong>Tip:</strong> If you want a faster entry experience on mobile, share the direct Google Form link with your team instead of using this page. The page is only useful if you want the entry experience to feel branded.
+        <br><br>
+        <strong>Privacy:</strong> This page is marked <code style="background:transparent; color:var(--olive); padding:0;">noindex</code> so search engines won't list it.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="nav-logo-mark">
+          <a href="index.html" class="nav-logo">
+            <img src="assets/icon.png" alt="Vidyankur Icon" class="nav-logo-icon">
+            <img src="assets/text.png" alt="Vidyankur Text" class="nav-logo-text">
+        </span>
+          </div>
+          <p>Nurturing young minds with Indian stories. Heritage activity books for children aged 3 and up.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="activity-centres.html">For Activity Centres</a></li>
+            <li><a href="schools.html">For Schools</a></li>
+            <li><a href="competitions.html">Competitions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+919876263243">+91 98762 63243</a></li>
+            <li><a href="mailto:vidyankurpublication@gmail.com">vidyankur&shy;publication@gmail.com</a></li>
+            <li>Zirakpur, Punjab</li>
+            <li>India</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <ul>
+            <li><a href="https://instagram.com/_vidyankur" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="#">Amazon Store</a></li>
+            <li><a href="contact.html">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VIDYANKUR™. All rights reserved.</span>
+        <span>Made with ❤ in India</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
